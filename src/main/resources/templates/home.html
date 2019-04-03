@@ -1,0 +1,36 @@
+<html>
+<body>
+<pre>
+$!{value1}
+ ${value2}
+ $!{value3} ##如果不存在强制为空
+fdgdfgdf
+ color:$!{colors}
+
+ #foreach($color in $colors)
+  This is color: $color,$!{foreach.count}
+ #end
+
+
+
+ $!{user.name}
+ #set($title = "now")
+ $!{title}
+
+ Parse:#parse("header.html")
+ Include: #include("header.html")
+
+ #macro(render_color,$index,$color)
+   Color Render Macro $index,$color
+ #end
+
+ #foreach($k in $map.keySet())
+    #render_color($foreach.count ,$map.get($k))
+ #end
+
+</pre>
+
+
+</body>
+
+</html>
